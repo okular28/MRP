@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Example</title>
+<link rel="stylesheet" href="grid_style.css">
+</head>
+<body>
+<div class="container">
+    <div class="formsy">
+        <form>
+            <label for="quantity">Ilość: </label>
+            <input type="text" id="quantity" name="Ilosc" placeholder="Podaj ilosc... "><br>
+            
+            <label for="btime">Czas rozpoczęcia produkcji:  </label>
+            <input type="text" id="btime" name="btime" placeholder="Podaj tydzien... ">
+        </br>
+        <label for="zapas">Zapasy:  </label>
+        <input type="text" id="btime" name="btime" placeholder="Podaj ilość zapasów... ">
+
+         <br>
+            <input type="submit" value="Submit">
+        
+        </form>
+
+    </div>
+</div>
+
+<div class="grd">
+<div class="grid-container">
+  <!-- Row 1 -->
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <div class="grid-item">13</div>
+  <!-- Row 2 -->
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <div class="grid-item">13</div>
+  <!--Row 3-->
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <div class="grid-item">13</div>
+  <!--Row 4-->
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <div class="grid-item">13</div>
+  <!--Row5 5-->
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <div class="grid-item">13</div>
+  <!--Row 6-->
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+  <div class="grid-item">5</div>
+  <div class="grid-item">6</div>
+  <div class="grid-item">7</div>
+  <div class="grid-item">8</div>
+  <div class="grid-item">9</div>
+  <div class="grid-item">10</div>
+  <div class="grid-item">11</div>
+  <div class="grid-item">12</div>
+  <div class="grid-item">13</div>
+</div>
+</div>
+<p id="output"></p>
+<script>
+   
+   document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    
+    // Retrieve the input value for quantity
+    var quantityInput = document.getElementById('quantity').value;
+    var btime=document.getElementById('btime').value;
+    // Convert the input value to a number
+    var quantity = parseInt(quantityInput);
+    console.log(btime);
+    btime=parseInt(btime);
+    btime2=btime;
+    // Get all grid items
+    var gridItems = document.querySelectorAll('.grid-item');
+    gridItems.forEach((gd)=>gd.style.background='');
+    // Loop through grid items and color the specified number
+console.log(btime2);
+
+    for (var i=0; i < gridItems.length; i++) {
+        console.log(i);
+        
+        if (btime2==i+1){
+            
+            // Check if the index is less than the quantity
+            // if (i < quantity) {
+            //     // Color the grid item
+            //     gridItems[i].style.background = 'pink';
+            //     btime2++
+            // } 
+            for(let j = 0; j < quantity; j++){
+                gridItems[i].style.background = 'pink';
+                gridItems[i].textContent=j+1;
+                i++
+            }
+                
+}
+            console.log(btime2, i);
+
+            
+            
+        }
+    }
+);
+   
+  </script>
+</body>
+</html>
